@@ -5,9 +5,9 @@ You can use this as a template for a C/C++ project that will interface
 with Nim code, or integrate it into an existing project.
 
 This example uses the code from the [Nim Backend Integration](https://nim-lang.org/docs/backends.html)
-manual page. The [fib proc](src/nim/fib.nim) is exported and compiled as a static library which can
-then be called from our [C application](src/main.c). The entire application is
-then built using CMake.
+manual page. The [fib proc](src/nim/fib.nim) is exported and compiled as a
+static library which can then be called from our [C application](src/main.c).
+The entire application is built using CMake.
 
 ## Requirements
 
@@ -33,4 +33,5 @@ Feel free to submit an issue/PR. Open to comments, suggestions, improvements.
 
 ## License
 
-All code in this repo is available to the public domain. See [LICENSE](LICENSE) for details.
+All code in this repo is available to the public domain. See [LICENSE](LICENSE)
+for details.
