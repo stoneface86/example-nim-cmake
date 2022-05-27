@@ -27,13 +27,7 @@ set(NIM_DEPS "")
 # set the nimcache in our build folder
 set(NIMCACHE "${CMAKE_CURRENT_BINARY_DIR}/nimcache")
 
-# Dunno how sane this is
-if (WIN32)
-    set(NIM_LIB "nim.lib")
-else ()
-    set(NIM_LIB "libnim.a")
-endif ()
-
+set(NIM_LIB "${CMAKE_STATIC_LIBRARY_PREFIX}nim${CMAKE_STATIC_LIBRARY_SUFFIX}")
 set(NIM_LIB_PATH "${CMAKE_CURRENT_BINARY_DIR}/${NIM_LIB}")
 
 # build the library via nimble
@@ -44,7 +38,6 @@ add_custom_command(
     -d:cmakeBuildType:${CMAKE_BUILD_TYPE} "${NIM_PROJECT}"
     DEPENDS "${NIM_PROJECT}" "${NIM_DEPS}" config.nims cmake.nim interop.nimble
     WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-    COMMAND_EXPAND_LISTS
 )
 add_custom_target(
     nimbuild 
